@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Full Note</title>
+</head>
+<body>
+    <h1>Delete Full Note</h1>
+    <p>Are you sure you want to delete the full note "{{ note.title }}"?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+        <a href="{% url 'full_note_list' %}">Cancel</a>
+    </form>
+</body>
+</html>

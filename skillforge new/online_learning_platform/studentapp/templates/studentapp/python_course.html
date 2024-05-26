@@ -1,0 +1,41 @@
+{%extends 'adminapp/base.html'%}
+{%load static %}
+{%block content%}
+    <header id="header" class="header d-flex align-items-center">
+
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <h1>SkillForge<span>.</span></h1>
+          </a>
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'aboutus' %}">About</a></li>
+              <li><a href="{% url 'certificate_upload' %}">Course Completion Certificate</a></li>
+              <li><a href="{% url 'contact'%}">Contact</a></li>
+              <li><a href="{% url 'student_login'%}">logout</a></li>
+              
+            </ul>
+          </nav>
+          <!-- .navbar -->
+    
+          <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+          <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    
+        </div>
+      </header><!-- End Header -->
+      <!-- End Header -->
+      <br>
+      <center>
+    <h1>Welcome to SkillForge-Python Programming !</h1>
+    </center>
+    <P>Welcome to SkillForge-Python Programming! This comprehensive course is designed to equip you with a robust understanding of Python, one of the most versatile and widely-used programming languages today. Whether you are a beginner seeking to enter the world of coding or an experienced developer looking to sharpen your skills, our curriculum covers everything you need. From basic syntax and data structures to advanced topics like web development, data analysis, and machine learning, our expert instructors will guide you through practical exercises and real-world projects. By the end of this course, you will have the confidence and competence to tackle a wide array of programming challenges, paving the way for your success in the ever-evolving tech industry. Welcome aboard, and let's start forging your Python programming skills!</P>
+    <h3>Explore Python Programming Through the Materials available !</h3>
+    <ul>
+      <li><b><a href="{% url 'video_list_view' %}">Videos</a></b></li>
+      <li><b><a href="{% url 'note_list_view' %}">Notes</a></b></li>
+      <li><b><a href="{% url 'assignment_list_view' %}">Assignments</a></b></li>
+      <li><b><a href="{% url 'view_quiz' %}">Quizzes</a></b></li>
+      </ul>
+
+{%endblock%}

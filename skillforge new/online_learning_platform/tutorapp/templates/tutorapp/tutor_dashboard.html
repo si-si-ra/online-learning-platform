@@ -1,0 +1,47 @@
+{%extends 'adminapp/base.html'%}
+{%load static %}
+{%block content%}
+
+<header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1>SkillForge<span>.</span></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'aboutus' %}">About</a></li>
+          <li><a href="{% url 'contact'%}">Contact</a></li>
+          <li><a href="{% url 'tutor_login'%}">logout</a></li>
+          
+        </ul>
+      </nav>
+      <!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+  <br>
+      <center>
+    <h1>Welcome to SkillForge-Tutor Dashboard !</h1>
+  </center>
+
+  <h2>Select your Course !</h2>
+  <ol>
+    <li><b><a href="{% url 'python' %}">SkillForge-Python Programming</a></b></li>
+    <li><b><a href="{% url 'fullstack' %}">SkillForge-Full stack web development</a></b></li>
+    <li><b><a href="{% url 'datascience'%}">SkillForge-Datascience and Machine Learning</a></b></li>
+    <li><b><a href="">SkillForge-Speak English</a></b></li>
+    <li><b><a href="">SkillForge-Speak French</a></b></li>
+    <li><b><a href="">SkillForge-Speak German</a></b></li>
+    <li><b><a href="">SkillForge-Tally Essentials</a></b></li>
+    <li><b><a href="">SkillForge-M S Excel</a></b></li>
+    <li><b><a href="">SkillForge-Graphic Designing</a></b></li>
+    
+  </ol>
+    
+{%endblock%}

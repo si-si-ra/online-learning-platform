@@ -1,0 +1,57 @@
+{%extends 'adminapp/base.html'%}
+{%load static %}
+{%block content%}
+<!-- templates/certificate_upload.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>python videos</title>
+</head>
+<body>
+    <header id="header" class="header d-flex align-items-center">
+
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <h1>SkillForge<span>.</span></h1>
+          </a>
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'aboutus' %}">About</a></li>
+              <li class="dropdown"><a href="#"><span>Materials</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="{% url 'video_list_view' %}">Videos</a></li>
+                  <li><a href="{% url 'note_list_view' %}">Notes</a></li>
+                  <li><a href="{% url 'assignment_list_view' %}">Assignments</a></li>
+                  <li><a href="{% url 'view_quiz' %}">Quizzes</a></li>
+                  </ul>
+              <li><a href="{% url 'contact'%}">Contact</a></li>
+              <li><a href="{% url 'student_login'%}">logout</a></li>
+              
+            </ul>
+          </nav>
+          <!-- .navbar -->
+    
+          <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+          <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    
+        </div>
+      </header><!-- End Header -->
+      <!-- End Header --><br><center> <h2>Let's Learn Python !</h2></center>
+ <br>
+ <h3>Videos for you..</h3>
+ <ul>
+      <br>{% for video in videos %}
+      <li><h4>{{ video.title }}</h4>
+    <video width="320" height="240" controls>
+        <source src="{{ video.video_file.url }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</li></ul>
+{% endfor %}
+</body>
+</html>
+
+{%endblock%}

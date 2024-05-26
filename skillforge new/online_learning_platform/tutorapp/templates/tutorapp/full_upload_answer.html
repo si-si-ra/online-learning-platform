@@ -1,0 +1,39 @@
+{%extends 'adminapp/base.html'%}
+{%load static %}
+{%block content%}
+<header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1>SkillForge<span>.</span></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'aboutus' %}">About</a></li>
+          <li class="dropdown"><a href="#"><span>Materials</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{% url 'full_video_list_view' %}">Videos</a></li>
+              <li><a href="{% url 'full_note_list_view' %}">Notes</a></li>
+              <li><a href="{% url 'full_assignment_list_view' %}">Assignments</a></li>
+              <li><a href="{% url 'full_view_quiz' %}">Quizzes</a></li>
+              </ul>
+          <li><a href="{% url 'contact'%}">Contact</a></li>
+          <li><a href="{% url 'student_login'%}">logout</a></li>
+          
+        </ul>
+      </nav>
+      <!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+    <h1>Upload Answer for "{{ assignment.title }}"</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload Answer</button>
+    </form>
+    {%endblock%}

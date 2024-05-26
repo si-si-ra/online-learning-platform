@@ -1,0 +1,40 @@
+{%extends 'adminapp/base.html'%}
+{%load static %}
+{%block content%}
+    <header id="header" class="header d-flex align-items-center">
+
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <h1>SkillForge<span>.</span></h1>
+          </a>
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li><a href="{% url 'aboutus' %}">About</a></li>
+              <li><a href="{% url 'certificate_upload' %}">Course Completion Certificate</a></li>
+              <li><a href="{% url 'contact'%}">Contact</a></li>
+              <li><a href="{% url 'student_login'%}">logout</a></li>
+              
+            </ul>
+          </nav>
+          <!-- .navbar -->
+    
+          <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+          <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    
+        </div>
+      </header><!-- End Header -->
+      <!-- End Header -->
+      <br>
+      <center>
+    <h1>Welcome to SkillForge-Full stack web development !</h1>
+    <p>Welcome to SkillForge-Full Stack Web Development! This all-encompassing course is meticulously crafted to provide you with a thorough understanding of full stack web development, enabling you to build dynamic and responsive websites from scratch. Whether you're new to coding or an experienced developer aiming to expand your skill set, our curriculum spans everything you need to know. You'll dive into front-end technologies like HTML, CSS, and JavaScript, master back-end frameworks such as Node.js and Django, and work with databases like MongoDB and SQL. Our seasoned instructors will guide you through hands-on projects and practical exercises, ensuring you gain real-world experience and proficiency in both front-end and back-end development. By the end of this course, you'll possess the expertise and confidence to create full-fledged web applications, setting you on a path to success in the rapidly growing field of web development. Welcome to SkillForge, and let's start building your future in full stack web development!</p>
+  </center>
+  <h3>Explore Full Stack Web Development Through the Materials available !</h3>
+  <ul>
+    <li><b><a href="{% url 'full_video_list_view' %}">Videos</a></b></li>
+    <li><b><a href="{% url 'full_note_list_view' %}">Notes</a></b></li>
+    <li><b><a href="{% url 'full_assignment_list_view' %}">Assignments</a></b></li>
+    <li><b><a href="{% url 'full_view_quiz' %}">Quizzes</a></b></li>
+    </ul>
+{%endblock%}

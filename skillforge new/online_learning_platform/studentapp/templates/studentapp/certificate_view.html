@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Completion Certificate</title>
+    <style>
+        .certificate-container {
+            border: 2px solid #000;
+            padding: 20px;
+            margin: 20px;
+            width: 50%;
+            margin: auto;
+        }
+        .certificate-container p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Skillforge Online Courses</h1>
+    {% if certificate %}
+        <div class="certificate-container">
+            <p><strong>Name:</strong> {{ certificate.full_name }}</p>
+            <p><strong>Course:</strong> {{ certificate.course_name }}</p>
+            {% if certificate.certificate_file %}
+                <a href="{{ certificate.certificate_file.url }}" download>Download Certificate</a>
+            {% else %}
+                <p>No certificate file uploaded.</p>
+            {% endif %}
+        </div>
+    {% else %}
+        <p>No certificate found.</p>
+    {% endif %}
+</body>
+</html>
+
+
+
+

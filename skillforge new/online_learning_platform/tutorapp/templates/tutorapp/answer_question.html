@@ -1,0 +1,47 @@
+{%extends 'adminapp/base.html'%}
+{%load static %}
+{%block content%}
+<header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1>SkillForge<span>.</span></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'aboutus' %}">About</a></li>
+          <li class="dropdown"><a href="#"><span>Materials</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{% url 'video_list_view' %}">Videos</a></li>
+              <li><a href="{% url 'note_list_view' %}">Notes</a></li>
+              <li><a href="{% url 'assignment_list_view' %}">Assignments</a></li>
+              <li><a href="{% url 'upload_quiz' %}">Quizzes</a></li>
+              </ul>
+          <li><a href="{% url 'contact'%}">Contact</a></li>
+          <li><a href="{% url 'tutor_logout'%}">logout</a></li>
+          
+        </ul>
+      </nav>
+      <!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header --><br><center> <h1>Let's Learn Python !</h1></center>
+ <br>
+    <h2>Question for you..</h2>
+    <p>{{ question.question_text }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <label>Your Answer:</label>
+        <input type="text" name="answer">
+        <button type="submit">Submit</button>
+    </form>
+    {% if answer %}
+        <p>Your Answer: {{ answer }}</p>
+        <p>Correct Answer: {{ correct_answer }}</p>
+    {% endif %}
+{%endblock%}
